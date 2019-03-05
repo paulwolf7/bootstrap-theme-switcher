@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.0/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+        <link href="SwitcherResources/themes.css" type="text/css" rel="stylesheet" />
+        <link href="SwitcherResources/themeSwitcher.css?id=1" type="text/css" rel="stylesheet" />
+
+        <script src="react-theme-switcher.js"></script>
+        <script src="site.js"></script>
+
+        <link rel="stylesheet" id="themeLink" />
+        <link rel="stylesheet" href="site.css" />
+
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <script type="text/babel">
+            class App extends React.Component {
+                render() {
+                    return (
+                        <React.Fragment>
+                            <Jumborton />
+                            <ThemeSwitcher />
+                        </React.Fragment>
+                    );
+                }
+            }
+
+            class Jumborton extends React.Component {
+                render() {
+                    return (
+                        <div className="jumbotron">
+                            <h1 className="display-4">Hello, My Friend!</h1>
+                            <p className="lead">This sample shows how Bootstrap Theme Switcher works.</p>
+                            <hr className="my-4" />
+                            <p>It uses Bootswatch themes, though you are free to create your custom Bootstrap themes.</p>
+                            <p className="lead">
+                                <button type="button" id="themeSwitcherBtn" className="btn btn-info">Change Theme</button>
+                            </p>
+                        </div>
+                    );
+                }
+            }
+
+            class ThemeSwitcher extends React.Component {
+                render() {
+                    const listItems = themes.map((theme) =>
+                        <ListItem key={theme.toString()} value={theme} />
+                    );
+                    return (
+                        <div id="settingsbar" className="float-right">
+                            <nav id="themesMenu">
+                                <ul className="nav navbar-nav">
+                                    {listItems}
+                                </ul>
+                            </nav>
+                        </div>
+                    );
+                }
+            }
+
+            class ListItem extends React.Component {
+                constructor(props) {
+                    super(props);
+
+                    this.itemClick = onItemClick.bind(this, props.value);
+                }
+
+                render() {
+                    const spanImage = "image " + this.props.value.toLowerCase();
+                    return(
+                        <li className="nav-item" id="themesMenu_li">
+                            <a className="nav-link" onClick={this.itemClick} href="javascript:void(0)" id="themesMenu_link">
+                                <span className={spanImage}></span><span>{this.props.value}</span>
+                            </a>
+                        </li>
+                    );
+                }
+            }
+
+            const themes = [
+                "Eclipse",
+                "Default",
+                "Cerulean",
+                "Cosmo",
+                "Cyborg",
+                "Darkly",
+                "Flatly",
+                "Journal",
+                "Litera",
+                "Lumen",
+                "Lux",
+                "Materia",
+                "Minty",
+                "Pulse",
+                "Sandstone",
+                "Simplex",
+                "Sketchy",
+                "Slate",
+                "Solar",
+                "Spacelab",
+                "Superhero",
+                "United",
+                "Yeti"
+            ];
+
+            ReactDOM.render(
+                <App />,
+                document.getElementById('root')
+            );
+        </script>
+    </body>
+
+</html>

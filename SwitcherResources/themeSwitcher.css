@@ -1,0 +1,48 @@
+﻿
+#settingsbar {
+    transition: width 500ms;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--light);
+    border-left: 1px solid #e3e3e3;
+    padding: 25px 0 0 0;
+    width: 280px;
+    z-index: 30;
+    overflow-y: scroll;
+}
+
+#settingsbar #themesMenu {
+    margin-left: 10px;
+    margin-right: 18px;
+}
+
+#settingsbar #themesMenu li {
+    width: 70%;
+}
+
+#settingsbar #themesMenu li > a:not(.selectedItem):hover {
+    background: #e8e8e8;
+    padding-left: 5px;
+    font-size: 110%;
+}
+
+#settingsbar #themesMenu {
+    margin-left: 10px;
+    font-size: 14px;
+    min-width: 250px;
+}
+
+#settingsbar #themesMenu .nav {
+    font-size: 14px;
+}
+
+#settingsbar #themesMenu li > a > .image {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: -3px;
+    margin-right: 16px;
+    border: 1px solid #fff;
+}

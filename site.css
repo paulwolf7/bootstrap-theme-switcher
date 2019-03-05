@@ -1,0 +1,7 @@
+﻿.selectedItem {
+    background-color: #e8e8e8 !important;
+}
+
+.selectedItem span {
+    margin-left: 5px;
+}
