@@ -64,7 +64,7 @@
                     return (
                         <div id="settingsbar" className="float-right">
                             <nav id="themesMenu">
-                                <ul className="nav navbar-nav">
+                                <ul className="nav nav-pills">
                                     {listItems}
                                 </ul>
                             </nav>
@@ -83,8 +83,8 @@
                 render() {
                     const spanImage = "image " + this.props.value.toLowerCase();
                     return(
-                        <li className="nav-item" id="themesMenu_li">
-                            <a className="nav-link" onClick={this.itemClick} href="javascript:void(0)" id="themesMenu_link">
+                        <li className="nav-item" id="themesMenu_li_{spanImage}">
+                            <a className="nav-link" onClick={this.itemClick} href="javascript:void(0)" id="themesMenu_link_{spanImage}">
                                 <span className={spanImage}></span><span>{this.props.value}</span>
                             </a>
                         </li>

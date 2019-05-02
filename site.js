@@ -17,7 +17,7 @@ $(document).ready(function () {
 function selectItem(theme) {
     var selectedItem = $('.nav-item').find('span.' + theme);
     if (selectedItem.length !== 0) {
-        selectedItem.parent().addClass("selectedItem");
+        selectedItem.parent().addClass("active");
     }
 }
 
@@ -25,7 +25,7 @@ function onItemClick(theme) {
     theme = theme.toLowerCase();
     if (theme == $.cookie(THEME_COOKIE_KEY)) return;
 
-    $('.selectedItem').removeClass("selectedItem");
+    document.querySelector("#settingsbar .active").classList.remove("active");
     selectItem(theme);
 
     $(window.top.document.body).fadeOut(200, function () {

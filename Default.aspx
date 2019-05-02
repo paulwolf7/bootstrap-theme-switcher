@@ -22,7 +22,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        
+
 
         <div class="jumbotron">
             <h1 class="display-4">Hello, My Friend!</h1>
@@ -36,11 +36,12 @@
 
         <div id="settingsbar" class="float-right">
             <nav id="themesMenu">
-                <ul class="nav navbar-nav">
+                <ul class="nav nav-pills">
+                    <li class="nav-item theme-group">Bootswatch Themes</li>
                     <asp:Repeater ID="themesRepeater" runat="server">
                         <ItemTemplate>
-                            <li class="nav-item" id="themesMenu_li">
-                                <a class="nav-link" href="javascript:onItemClick('<%# Container.DataItem.ToString().ToLower() %>')" id="themesMenu_link">
+                            <li class="nav-item" id="themesMenu_li_<%# Container.DataItem.ToString().ToLower() %>">
+                                <a class="nav-link <%# CurrentTheme == Container.DataItem.ToString().ToLower() ? "active" : "" %>" href="javascript:onItemClick('<%# Container.DataItem.ToString().ToLower() %>')" >
                                     <span class="image <%# Container.DataItem.ToString().ToLower() %>"></span><span><%# Container.DataItem.ToString() %></span>
                                 </a>
                             </li>

@@ -3,29 +3,49 @@
     transition: width 500ms;
     position: fixed;
     right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: var(--light);
+    top: 3.5rem;
+    background-color: #fff;
+    color: #666;
     border-left: 1px solid #e3e3e3;
-    padding: 25px 0 0 0;
+    border-bottom: 1px solid #e3e3e3;
+    padding: 5px 0 0 0 !important;
     width: 280px;
+    height: 100%;
     z-index: 30;
-    overflow-y: scroll;
+    overflow-y: visible;
 }
 
-#settingsbar #themesMenu {
-    margin-left: 10px;
-    margin-right: 18px;
+    #settingsbar #themesMenu {
+        margin-left: 10px;
+    }
+
+#themesMenu ul {
+    columns: 2;
+    margin-bottom: 1rem;
 }
 
 #settingsbar #themesMenu li {
-    width: 70%;
+    width: 50%;
 }
 
-#settingsbar #themesMenu li > a:not(.selectedItem):hover {
-    background: #e8e8e8;
-    padding-left: 5px;
-    font-size: 110%;
+    #settingsbar #themesMenu li > a {
+        white-space: nowrap;
+        font-weight: 500;
+        border-radius: 0;
+        border: 0;
+        background-image: none;
+        padding: 12px 12px 8px;
+    }
+
+        #settingsbar #themesMenu li > a:not(.active):hover {
+            background: #e8e8e8;
+            /*padding-left: 5px;
+            font-size: 110%;*/
+        }
+
+#settingsbar #themesMenu .nav-item {
+    margin-right: 0;
+    padding-bottom: 0;
 }
 
 #settingsbar #themesMenu {
@@ -34,8 +54,31 @@
     min-width: 250px;
 }
 
-#settingsbar #themesMenu .nav {
-    font-size: 14px;
+    #settingsbar #themesMenu .nav {
+        font-size: 14px;
+    }
+
+    #settingsbar #themesMenu li > a:not(.active) {
+        color: #a9a9a9;
+    }
+
+    #settingsbar #themesMenu li.theme-group {
+        /*font-family: overpass;*/
+        font-weight: 500;
+        font-size: 15px;
+        margin: 16px 12px 8px;
+        white-space: nowrap;
+        width: 100% !important;
+    }
+
+#settingsbar * {
+    text-shadow: none;
+    letter-spacing: 0;
+}
+
+#settingsbar h5 {
+    color: #666;
+    padding-left: 1em;
 }
 
 #settingsbar #themesMenu li > a > .image {
@@ -45,4 +88,40 @@
     vertical-align: -3px;
     margin-right: 16px;
     border: 1px solid #fff;
+}
+
+.theme-slate #themesMenu .nav-item > .nav-link.active {
+    background: #484e55;
+}
+
+#settingsButton {
+    padding-top: 14px;
+    padding-bottom: 8px;
+}
+
+    #settingsButton .oi.oi-cog {
+        font-size: 1.5em;
+        color: #222;
+    }
+
+        #settingsButton .oi.oi-cog:hover {
+            color: #888;
+        }
+
+
+#settingsbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+#settingsbar::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+#settingsbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
 }
